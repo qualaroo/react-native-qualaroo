@@ -1,0 +1,16 @@
+yarn.lock
+.npmignore
+.gitattributes
+
+.idea/
+node_modules/
+examples/
+
+android/.idea/
+android/.gradle/
+android/build/
+android/gradle/
+android/android.iml
+android/local.properties
+
+ios/.idea/
