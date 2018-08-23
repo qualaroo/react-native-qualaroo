@@ -29,7 +29,36 @@ public class QualarooMobileSdkModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
+  public void init(String apiKey, boolean debugMode) {
+    Qualaroo.initializeWith(reactContext)
+            .setApiKey(apiKey)
+            .setDebugMode(debugMode)
+            .init();
+  }
+
+  @ReactMethod
   public void showSurvey(String surveyAlias) {
     Qualaroo.getInstance().showSurvey(surveyAlias);
   }
+
+  @ReactMethod
+  public void setUserId(String userId) {
+    Qualaroo.getInstance().setUserId(userId);
+  }
+
+  @ReactMethod
+  public void setUserProperty(String key, String value) {
+    Qualaroo.getInstance().setUserProperty(key, value);
+  }
+
+  @ReactMethod
+  public void removeUserProperty(String key) {
+    Qualaroo.getInstance().removeUserProperty(key);
+  }
+
+  @ReactMethod
+  public void setPreferredLanguage(String iso2Language) {
+    Qualaroo.getInstance().setPreferredLanguage(iso2Language);
+  }
+
 }
