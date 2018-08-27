@@ -1,24 +1,20 @@
 
 Pod::Spec.new do |s|
   s.name         = "QualarooMobileSdk"
-  s.version      = "1.0.0"
+  s.version      = "1.8.0"
   s.summary      = "QualarooMobileSdk"
-  s.description  = <<-DESC
-                  QualarooMobileSdk
-                   DESC
-  s.homepage     = ""
+  s.description  = "React Native Bridge for Qualaroo SDK"              
+  s.homepage     = "qualaroo.com"
   s.license      = "MIT"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
-  s.author             = { "author" => "author@domain.cn" }
+  s.author             = { "author" => "contact@qualaroo.com" }
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/author/QualarooMobileSdk.git", :tag => "master" }
+  s.source       = { :git => "https://github.com/qualaroo/QualarooSDKiOS", :tag => "master" }
   s.source_files  = "QualarooMobileSdk/**/*.{h,m}"
   s.requires_arc = true
 
 
   s.dependency "React"
-  #s.dependency "others"
+  s.dependency "Qualaroo"
 
 end
-
-  

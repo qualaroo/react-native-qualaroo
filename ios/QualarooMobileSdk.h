@@ -4,7 +4,6 @@
 #else
 #import <React/RCTBridgeModule.h>
 #endif
-
 @interface QualarooMobileSdk : NSObject <RCTBridgeModule>
 
 @end

@@ -29,14 +29,6 @@ public class QualarooMobileSdkModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
-  public void init(String apiKey, boolean debugMode) {
-    Qualaroo.initializeWith(reactContext)
-            .setApiKey(apiKey)
-            .setDebugMode(debugMode)
-            .init();
-  }
-
-  @ReactMethod
   public void showSurvey(String surveyAlias) {
     Qualaroo.getInstance().showSurvey(surveyAlias);
   }
