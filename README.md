@@ -1,45 +1,62 @@
 
-# react-native-mobile-sdk
+# react-native-qualaroo-mobile-sdk
+React Native Bridge for Qualaroo Mobile SDK
 
 ## Getting started
 
+### 1. Install package
 `$ npm install react-native-mobile-sdk --save`
 
-### Mostly automatic installation
+#### 2a. Android specific
+- include the following in your `android/app/build.gradle` file:
+```
+repositories {
+    maven {
+        url 'https://s3.amazonaws.com/qualaroo-android-sdk/libs'
+    }
+}
+dependencies {
+    compile 'com.qualaroo:qualaroo-sdk:1.8.0'
+}
+```
 
+#### 2b. iOS specific
+- make sure your `ios/Podfile` contains:
+```
+target '<YOUR_TARGET_NAME>' do
+  ...
+  use_frameworks!
+  pod 'Qualaroo'
+  ...
+end
+```
+- navigate to **ios** directory and run `pod install`
+- make sure **Always Embed Swift Standard Libraries** in your main project's Build Options is set to true
+
+
+### 3. Link package
 `$ react-native link react-native-mobile-sdk`
-
-### Manual installation
-
-
-#### iOS
-
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-mobile-sdk` and add `QualarooMobileSdk.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libQualarooMobileSdk.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
-
-#### Android
-
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.qualaroo.sdk.react.QualarooMobileSdkPackage;` to the imports at the top of the file
-  - Add `new QualarooMobileSdkPackage()` to the list returned by the `getPackages()` method
-2. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':react-native-mobile-sdk'
-  	project(':react-native-mobile-sdk').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-mobile-sdk/android')
-  	```
-3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
-      compile project(':react-native-mobile-sdk')
-  	```
-
 
 ## Usage
 ```javascript
 import QualarooMobileSdk from 'react-native-mobile-sdk';
 
-// TODO: What to do with the module?
-QualarooMobileSdk;
+//In order to be able to use Qualaroo SDK you need to to initialize it first.
+QualarooMobileSdk.init("<your_api_key">)
+
+//Display survey with a given alias:
+QualarooMobileSdk.showSurvey("survey_alias")
+
+//Set unique user id
+QualarooMobileSdk.setUserId("HAL_9000");
+
+//Set user property "name" to "Hal"
+QualarooMobileSdk.setUserProperty("name", "Hal");
+
+//remove property "name"
+QualarooMobileSdk.removeUserProperty("name");
+
+//You can set preferred language that you want to use when displaying surveys.
+QualarooMobileSdk.setPreferredLanguage("fr")
+
 ```
-  
