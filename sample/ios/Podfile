@@ -1,0 +1,4 @@
+target 'sample' do
+  use_frameworks!
+  pod 'Qualaroo'
+end
