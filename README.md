@@ -16,7 +16,7 @@ repositories {
     }
 }
 dependencies {
-    compile 'com.qualaroo:qualaroo-sdk:1.8.0'
+    compile 'com.qualaroo:qualaroo-sdk:1.8.1'
 }
 ```
 
