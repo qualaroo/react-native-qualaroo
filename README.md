@@ -5,7 +5,7 @@ React Native Bridge for Qualaroo Mobile SDK
 ## Getting started
 
 ### 1. Install package
-`$ npm install react-native-mobile-sdk --save`
+`$ npm install react-native-qualaroo-mobile-sdk --save`
 
 #### 2a. Android specific
 - include the following in your `android/app/build.gradle` file:
@@ -35,7 +35,7 @@ end
 
 
 ### 3. Link package
-`$ react-native link react-native-mobile-sdk`
+`$ react-native link react-native-qualaroo-mobile-sdk`
 
 ## Usage
 ```javascript
