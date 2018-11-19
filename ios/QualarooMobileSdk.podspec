@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "QualarooMobileSdk"
-  s.version      = "1.8.1"
+  s.version      = "1.8.4"
   s.summary      = "QualarooMobileSdk"
   s.description  = "React Native Bridge for Qualaroo SDK"              
   s.homepage     = "qualaroo.com"
