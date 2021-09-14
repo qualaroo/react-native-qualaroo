@@ -39,7 +39,7 @@ end
 
 ## Usage
 ```javascript
-import QualarooMobileSdk from 'react-native-mobile-sdk';
+import QualarooMobileSdk from 'react-native-qualaroo-mobile-sdk';
 
 //In order to be able to use Qualaroo SDK you need to to initialize it first.
 QualarooMobileSdk.init("<your_api_key">)
