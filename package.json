@@ -44,7 +44,7 @@
   },
   "homepage": "https://github.com/qualaroo/react-native-qualaroo#readme",
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^11.0.0",
