@@ -51,9 +51,11 @@ android {
 }
 
 repositories {
-  mavenCentral()
-  jcenter()
-  google()
+   mavenCentral()
+   jcenter()
+   google()
+   maven { url "https://maven.google.com" }
+   maven { url 'https://s3.amazonaws.com/qualaroo-android-sdk/libs/v3' }
 
   def found = false
   def defaultDir = null
@@ -127,4 +129,5 @@ dependencies {
   // noinspection GradleDynamicVersion
   api 'com.facebook.react:react-native:+'
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+  implementation 'com.qualaroo:qualaroo-sdk:2.0.0'
 }
