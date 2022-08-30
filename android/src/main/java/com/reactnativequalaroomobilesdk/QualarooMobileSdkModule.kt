@@ -1,8 +1,8 @@
 package com.reactnativequalaroomobilesdk
-
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
+import com.facebook.react.bridge.Promise
 import com.qualaroo.Qualaroo
 
 class QualarooMobileSdkModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
@@ -11,7 +11,7 @@ class QualarooMobileSdkModule(reactContext: ReactApplicationContext) : ReactCont
         return "QualarooMobileSdk"
     }
 
-  @ReactMethod
+      @ReactMethod
   fun init(apiKey: String?) {
     Qualaroo.initializeWith(reactApplicationContext)
       .setApiKey(apiKey)
@@ -45,5 +45,11 @@ class QualarooMobileSdkModule(reactContext: ReactApplicationContext) : ReactCont
     Qualaroo.getInstance().showSurvey(surveyAlias)
   }
 
+    // Example method
+    // See https://reactnative.dev/docs/native-modules-android
+    @ReactMethod
+    fun multiply(a: Int, b: Int, promise: Promise) {
+          promise.resolve(a * b)
+        }
 
-}
+    }
