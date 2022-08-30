@@ -8,7 +8,7 @@ ENV['RCT_NEW_ARCH_ENABLED'] = '0'
 
 target 'QualarooMobileSdkExample' do
   config = use_native_modules!
-
+  pod 'Qualaroo', :git => 'https://github.com/qualaroo/ios-sdk.git', :tag => '1.14.6'
   # Flags change depending on the env values.
   flags = get_default_flags()
 

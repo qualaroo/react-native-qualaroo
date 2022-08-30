@@ -49,5 +49,8 @@ allprojects {
         }
         google()
         maven { url 'https://www.jitpack.io' }
+      maven {
+        url 'https://s3.amazonaws.com/qualaroo-android-sdk/libs/'
+      }
     }
 }

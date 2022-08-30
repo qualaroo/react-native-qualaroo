@@ -1,29 +1,62 @@
+
 # react-native-qualaroo-mobile-sdk
 React Native Bridge for Qualaroo Mobile SDK
-## Installation
 
-```sh
-npm install react-native-qualaroo-mobile-sdk
+## Getting started
+
+### 1. Install package
+`$ npm install react-native-qualaroo-mobile-sdk --save`
+
+#### 2a. Android specific
+- include the following in your `android/app/build.gradle` file:
 ```
+repositories {
+    maven {
+        url 'https://s3.amazonaws.com/qualaroo-android-sdk/libs/'
+    }
+}
+dependencies {
+     implementation 'com.qualaroo:qualaroo-sdk:2.1.0'
+}
+```
+
+#### 2b. iOS specific
+- make sure your `ios/Podfile` contains:
+```
+target '<YOUR_TARGET_NAME>' do
+  ...
+  use_frameworks!
+  pod 'Qualaroo', :git => 'https://github.com/qualaroo/ios-sdk.git', :tag => '1.14.6'
+  ...
+end
+```
+- navigate to **ios** directory and run `pod install`
+- make sure **Always Embed Swift Standard Libraries** in your main project's Build Options is set to true
+
+
+### 3. Link package
+`$ react-native link react-native-qualaroo-mobile-sdk`
 
 ## Usage
+```javascript
+import QualarooMobileSdk from 'react-native-qualaroo-mobile-sdk';
 
-```js
-import { multiply } from "react-native-qualaroo-mobile-sdk";
+//In order to be able to use Qualaroo SDK you need to to initialize it first.
+QualarooMobileSdk.init("<your_api_key">)
 
-// ...
+//Display survey with a given alias:
+QualarooMobileSdk.showSurvey("survey_alias")
 
-const result = await multiply(3, 7);
+//Set unique user id
+QualarooMobileSdk.setUserId("HAL_9000");
+
+//Set user property "name" to "Hal"
+QualarooMobileSdk.setUserProperty("name", "Hal");
+
+//remove property "name"
+QualarooMobileSdk.removeUserProperty("name");
+
+//You can set preferred language that you want to use when displaying surveys.
+QualarooMobileSdk.setPreferredLanguage("fr")
+
 ```
-
-## Contributing
-
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
-
-## License
-
-MIT
-
----
-
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)

@@ -1,31 +1,42 @@
-import * as React from 'react';
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow strict-local
+ */
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-qualaroo-mobile-sdk';
+ import React, { useEffect } from 'react';
+ import {
+   SafeAreaView,
+   StatusBar,
+   Button
+ } from 'react-native';
+ 
+ import QualarooMobileSdk from 'react-native-qualaroo-mobile-sdk';
 
-export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
 
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
+
+const App = () => {
+  useEffect(()=>{
+    QualarooMobileSdk.init("NzQ4MTQ6YTJkMzA3OTY4MWNjMWVmYWYzM2VjMDM0ZWY4Nzg2YzBlN2ExMjI2ZDo3Nzc3Mw==")
+   },[])
 
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <>
+       <StatusBar barStyle="dark-content" />
+       <SafeAreaView>
+         <Button
+         title={"press"}
+         onPress = {()=>{
+          // QualarooMobileSdk.setUserProperty("screen_name","home")
+          QualarooMobileSdk.showSurvey("test_font_style")
+         }}
+         />
+       </SafeAreaView>
+     </>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
-});
+
+export default App;

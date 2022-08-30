@@ -14,7 +14,5 @@ const QualarooMobileSdk = NativeModules.QualarooMobileSdk  ? NativeModules.Quala
         },
       }
     );
+    export default QualarooMobileSdk 
 
-export function multiply(a: number, b: number): Promise<number> {
-  return QualarooMobileSdk.multiply(a, b);
-}
