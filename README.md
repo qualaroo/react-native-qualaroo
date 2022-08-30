@@ -12,11 +12,11 @@ React Native Bridge for Qualaroo Mobile SDK
 ```
 repositories {
     maven {
-        url 'https://s3.amazonaws.com/qualaroo-android-sdk/libs/v3'
+        url 'https://s3.amazonaws.com/qualaroo-android-sdk/libs/'
     }
 }
 dependencies {
-     implementation 'com.qualaroo:qualaroo-sdk:2.0.0'
+     implementation 'com.qualaroo:qualaroo-sdk:2.1.0'
 }
 ```
 
@@ -26,7 +26,7 @@ dependencies {
 target '<YOUR_TARGET_NAME>' do
   ...
   use_frameworks!
-  pod 'Qualaroo', :git => 'https://github.com/qualaroo/ios-sdk.git', :tag => '1.14.5'
+  pod 'Qualaroo', :git => 'https://github.com/qualaroo/ios-sdk.git', :tag => '1.14.6'
   ...
 end
 ```
