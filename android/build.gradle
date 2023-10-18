@@ -5,8 +5,8 @@ buildscript {
   repositories {
       google()
       mavenCentral()
-    maven {
-      url 'https://s3.amazonaws.com/qualaroo-android-sdk/libs/'
+   maven {
+       url 'https://jitpack.io'
     }
   }
 
@@ -133,7 +133,7 @@ repositories {
 def kotlin_version = getExtOrDefault('kotlinVersion')
 
 dependencies {
-  implementation 'com.qualaroo:qualaroo-sdk:2.1.0'
+  implementation 'com.github.qualaroo:android-sdk:2.1.2'
     //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
   implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
