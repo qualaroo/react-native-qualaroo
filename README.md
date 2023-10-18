@@ -7,20 +7,7 @@ React Native Bridge for Qualaroo Mobile SDK
 ### 1. Install package
 `$ npm install react-native-qualaroo-mobile-sdk --save`
 
-#### 2a. Android specific
-- include the following in your `android/app/build.gradle` file:
-```
-repositories {
-    maven {
-        url 'https://s3.amazonaws.com/qualaroo-android-sdk/libs/'
-    }
-}
-dependencies {
-     implementation 'com.qualaroo:qualaroo-sdk:2.1.0'
-}
-```
-
-#### 2b. iOS specific
+#### 2. iOS specific
 - make sure your `ios/Podfile` contains:
 ```
 target '<YOUR_TARGET_NAME>' do
@@ -32,10 +19,6 @@ end
 ```
 - navigate to **ios** directory and run `pod install`
 - make sure **Always Embed Swift Standard Libraries** in your main project's Build Options is set to true
-
-
-### 3. Link package
-`$ react-native link react-native-qualaroo-mobile-sdk`
 
 ## Usage
 ```javascript
