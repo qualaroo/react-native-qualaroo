@@ -9,14 +9,12 @@ const LINKING_ERROR =
 const QualarooMobileSdk = NativeModules.QualarooMobileSdk
   ? NativeModules.QualarooMobileSdk
   : new Proxy(
-      {},
-      {
-        get() {
-          throw new Error(LINKING_ERROR);
-        },
-      }
-    );
+    {},
+    {
+      get() {
+        throw new Error(LINKING_ERROR);
+      },
+    }
+  );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return QualarooMobileSdk.multiply(a, b);
-}
+export default QualarooMobileSdk;
