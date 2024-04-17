@@ -12,6 +12,7 @@ const QualarooMobileSdk = NativeModules.QualarooMobileSdk
     {},
     {
       get() {
+        console.log(LINKING_ERROR)
         throw new Error(LINKING_ERROR);
       },
     }

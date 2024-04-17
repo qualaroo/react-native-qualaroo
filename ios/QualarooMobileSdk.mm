@@ -1,19 +1,53 @@
-#import "QualarooMobileSdk.h"
+#import <React/RCTBridgeModule.h>
 
-@implementation QualarooMobileSdk
-RCT_EXPORT_MODULE()
+#import <React/RCTEventEmitter.h>
 
-// Example method
-// See // https://reactnative.dev/docs/native-modules-ios
-RCT_EXPORT_METHOD(multiply:(double)a
-                  b:(double)b
-                  resolve:(RCTPromiseResolveBlock)resolve
-                  reject:(RCTPromiseRejectBlock)reject)
+@interface RCT_EXTERN_MODULE( QualarooMobileSdk, NSObject)
+
+RCT_EXTERN_METHOD(supportedEvents)
+
+RCT_EXTERN_METHOD(multiply:(float)a withB:(float)b
+                 withResolver:(RCTPromiseResolveBlock)resolve
+                 withRejecter:(RCTPromiseRejectBlock)reject)
+
+RCT_EXTERN_METHOD(init:(NSString *) apiKey
+                 withResolver:(RCTPromiseResolveBlock)resolve
+                 withRejecter:(RCTPromiseRejectBlock)reject)
+
+RCT_EXTERN_METHOD(showSurvey:(NSString *) surveyAlias
+                 withResolver:(RCTPromiseResolveBlock)resolve
+                 withRejecter:(RCTPromiseRejectBlock)reject)
+
+RCT_EXTERN_METHOD(setUserId:(NSString *) userId
+                 withResolver:(RCTPromiseResolveBlock)resolve
+                 withRejecter:(RCTPromiseRejectBlock)reject)
+
+RCT_EXTERN_METHOD(setUserProperty:(NSString *) key withB:(NSString *) value
+                 withResolver:(RCTPromiseResolveBlock)resolve
+                 withRejecter:(RCTPromiseRejectBlock)reject)
+
+RCT_EXTERN_METHOD(removeUserProperty:(NSString *) key
+                 withResolver:(RCTPromiseResolveBlock)resolve
+                 withRejecter:(RCTPromiseRejectBlock)reject)
+
+RCT_EXTERN_METHOD(setPreferredLanguage:(NSString *) iso2Language
+                 withResolver:(RCTPromiseResolveBlock)resolve
+                 withRejecter:(RCTPromiseRejectBlock)reject)
+
++ (BOOL)requiresMainQueueSetup
 {
-    NSNumber *result = @(a * b);
-
-    resolve(result);
+  return NO;
 }
 
+@end
+
+@interface RCT_EXTERN_MODULE( QualarooEventEmiiter, RCTEventEmitter)
+
+RCT_EXTERN_METHOD(supportedEvents)
+
++ (BOOL)requiresMainQueueSetup
+{
+  return YES;
+}
 
 @end

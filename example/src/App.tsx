@@ -4,34 +4,35 @@ import {
   Button,
   DeviceEventEmitter,
   StyleSheet,
-  ToastAndroid,
   View,
+  NativeModules, NativeEventEmitter, 
+  Platform
 } from 'react-native';
 import QualarooMobileSdk from 'react-native-qualaroo-mobile-sdk';
 
+
 export default function App() {
+ const listener = Platform.select({
+    ios: new NativeEventEmitter(NativeModules.QualarooEventEmiiter),
+    android: DeviceEventEmitter,
+  });
   React.useEffect(() => {
-    QualarooMobileSdk.init(
-      'NzQ4MTQ6YTJkMzA3OTY4MWNjMWVmYWYzM2VjMDM0ZWY4Nzg2YzBlN2ExMjI2ZDo3MjEzMg=='
-    );
-    DeviceEventEmitter.addListener('survey_shown', (_data) => {
-      console.log('survey_show');
-      ToastAndroid.show(_data, ToastAndroid.SHORT);
-    });
-    DeviceEventEmitter.addListener('survey_dismissed', (_data) => {
-      ToastAndroid.show(_data, ToastAndroid.SHORT);
-    });
-    DeviceEventEmitter.addListener('survey_finished', (_data) => {
-      ToastAndroid.show(_data, ToastAndroid.SHORT);
-    });
+    QualarooMobileSdk.init('<your_key_here>');
+   
+    listener?.addListener('survey_shown',(_surveyAlias:string) =>{
+    })
+    listener?.addListener('survey_dismissed',(_surveyAlias:string) =>{
+    })
+    listener?.addListener('survey_finished',(_surveyAlias:string) =>{
+    })
   }, []);
 
   return (
     <View style={styles.container}>
       <Button
-        title={'press'}
+        title={'show'}
         onPress={() => {
-          QualarooMobileSdk.showSurvey('nps__net_promoter_score1234');
+          QualarooMobileSdk.showSurvey('<your_survey_alias>')
         }}
       />
     </View>

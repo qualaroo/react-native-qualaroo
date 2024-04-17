@@ -27,6 +27,8 @@ end
 
 target 'QualarooMobileSdkExample' do
   config = use_native_modules!
+  pod 'Qualaroo', :git => 'https://github.com/qualaroo/ios-sdk.git', :tag => '1.14.10'
+  # pod 'Qualaroo', :path => '/Users/ajay/Documents/QualarooiOS/ios-sdk'
 
   use_react_native!(
     :path => config[:reactNativePath],
