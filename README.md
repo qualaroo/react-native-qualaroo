@@ -2,6 +2,14 @@
 # react-native-qualaroo-mobile-sdk
 React Native Bridge for Qualaroo Mobile SDK
 
+### Released Versions
+
+#### Note: Before updating the SDK version here, please ensure that you have saved the design changes in the Qualaroo Nudge Editor
+
+2.1.3(Latest)- 11 June 2024
+
+2.1.2(Previous)- 7 April 2024
+
 ## Getting started
 
 ### 1. Install package
@@ -13,7 +21,7 @@ React Native Bridge for Qualaroo Mobile SDK
 target '<YOUR_TARGET_NAME>' do
   ...
   use_frameworks!
-  pod 'Qualaroo', :git => 'https://github.com/qualaroo/ios-sdk.git', :tag => '1.14.10'
+  pod 'Qualaroo', :git => 'https://github.com/qualaroo/ios-sdk.git', :tag => '1.14.16'
   ...
 end
 ```

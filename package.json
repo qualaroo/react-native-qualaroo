@@ -1,6 +1,6 @@
 {
   "name": "react-native-qualaroo-mobile-sdk",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "React Native Bridge for Qualaroo Mobile SDK",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
